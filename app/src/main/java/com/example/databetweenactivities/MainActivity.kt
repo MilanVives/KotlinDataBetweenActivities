@@ -14,19 +14,20 @@ class MainActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.btnApply)
         btn.setOnClickListener {
 
-            val name = findViewById<EditText>(R.id.etName).toString()
-            val age = findViewById<EditText>(R.id.etAge).toString().toInt()
-            val country = findViewById<EditText>(R.id.etCountry).toString()
+            val name = findViewById<EditText>(R.id.etName).text.toString()
+            val age = findViewById<EditText>(R.id.etAge).text.toString().toInt()
+            val country = findViewById<EditText>(R.id.etCountry).text.toString()
 
             val person = Person(name, age, country)
 
             Intent(this, SecondActivity::class.java).also{
                 it.putExtra("EXTRA_PERSON", person)
+                startActivity(it)
             }
 /*
-            val name = findViewById<EditText>(R.id.etName).toString()
-            val age = findViewById<EditText>(R.id.etAge).toString().toInt()
-            val country = findViewById<EditText>(R.id.etCountry).toString()
+            val name = findViewById<EditText>(R.id.etName).text.toString()
+            val age = findViewById<EditText>(R.id.etAge).text.toString().toInt()
+            val country = findViewById<EditText>(R.id.etCountry).text.toString()
             Intent(this, SecondActivity::class.java).also {
                 it.putExtra("EXTRA_NAME",name)
                 it.putExtra("EXTRA_AGE", age)
