@@ -12,8 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btn = findViewById<Button>(R.id.btnApply)
+
         btn.setOnClickListener {
 
+            //Uncomment this and comment out line 31 to 40 to pass an object to the next activity
+            /*
             val name = findViewById<EditText>(R.id.etName).text.toString()
             val age = findViewById<EditText>(R.id.etAge).text.toString().toInt()
             val country = findViewById<EditText>(R.id.etCountry).text.toString()
@@ -21,13 +24,14 @@ class MainActivity : AppCompatActivity() {
             val person = Person(name, age, country)
 
             Intent(this, SecondActivity::class.java).also{
-                it.putExtra("EXTRA_PERSON", person)
+               it.putExtra("EXTRA_PERSON", person)
                 startActivity(it)
-            }
-/*
+            }*/
+
             val name = findViewById<EditText>(R.id.etName).text.toString()
             val age = findViewById<EditText>(R.id.etAge).text.toString().toInt()
             val country = findViewById<EditText>(R.id.etCountry).text.toString()
+
             Intent(this, SecondActivity::class.java).also {
                 it.putExtra("EXTRA_NAME",name)
                 it.putExtra("EXTRA_AGE", age)
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 
- */
+
 
         }
     }
